@@ -1,0 +1,18 @@
+{
+	"name": "student",
+	"version": "1.0.0",
+	"description": "学生管理云函数",
+	"main": "index.js",
+	"scripts": {},
+	"author": "",
+	"license": "ISC",
+	"cloudfunction-config": {
+		"memorySize": 512,
+		"timeout": 60,
+		"path": "/api/student",
+		"runtime": "Nodejs16"
+	},
+	"dependencies": {
+		"auth-utils": "file:../common/auth-utils"
+	}
+}

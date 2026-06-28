@@ -1,0 +1,63 @@
+{
+  "bsonType": "object",
+  "required": [],
+  "permission": {
+    "read": false,
+    "create": false,
+    "update": false,
+    "delete": false
+  },
+  "properties": {
+    "_id": {
+      "bsonType": "objectId"
+    },
+    "uid": {
+      "bsonType": "string",
+      "description": "用户唯一标识"
+    },
+    "username": {
+      "bsonType": "string",
+      "description": "用户名"
+    },
+    "password": {
+      "bsonType": "string",
+      "description": "密码"
+    },
+    "nickname": {
+      "bsonType": "string",
+      "description": "昵称"
+    },
+    "avatar": {
+      "bsonType": "string",
+      "description": "头像"
+    },
+    "mobile": {
+      "bsonType": "string",
+      "description": "手机号"
+    },
+    "email": {
+      "bsonType": "string",
+      "description": "邮箱"
+    },
+    "role": {
+      "bsonType": "string",
+      "description": "角色",
+      "enum": ["parent", "coach", "admin"]
+    },
+    "student_ids": {
+      "bsonType": "array",
+      "description": "关联的学生ID列表",
+      "items": {
+        "bsonType": "string"
+      }
+    },
+    "created_at": {
+      "bsonType": "timestamp",
+      "description": "创建时间"
+    },
+    "updated_at": {
+      "bsonType": "timestamp",
+      "description": "更新时间"
+    }
+  }
+}

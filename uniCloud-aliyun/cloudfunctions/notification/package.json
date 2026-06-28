@@ -1,0 +1,16 @@
+{
+	"name": "notification",
+	"version": "1.0.0",
+	"description": "消息通知云函数",
+	"main": "index.js",
+	"scripts": {},
+	"author": "",
+	"license": "ISC",
+	"cloudfunction-config": {
+		"memorySize": 512,
+		"timeout": 60,
+		"path": "/api/notification",
+		"runtime": "Nodejs16"
+	},
+	"dependencies": {}
+}

@@ -1,0 +1,16 @@
+{
+  "name": "check-expired-packages",
+  "version": "1.0.0",
+  "description": "定时处理过期课时包",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "cloudfunction-config": {
+    "memorySize": 512,
+    "timeout": 60,
+    "path": "/api/check-expired-packages",
+    "runtime": "Nodejs16"
+  },
+  "dependencies": {}
+}

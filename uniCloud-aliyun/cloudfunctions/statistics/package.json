@@ -1,0 +1,16 @@
+{
+	"name": "statistics",
+	"version": "1.0.0",
+	"description": "数据统计云函数",
+	"main": "index.js",
+	"scripts": {},
+	"author": "",
+	"license": "ISC",
+	"cloudfunction-config": {
+		"memorySize": 512,
+		"timeout": 60,
+		"path": "/api/statistics",
+		"runtime": "Nodejs16"
+	},
+	"dependencies": {}
+}

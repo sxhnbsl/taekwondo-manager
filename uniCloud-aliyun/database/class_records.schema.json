@@ -1,0 +1,90 @@
+{
+	"bsonType": "object",
+	"required": ["student_id", "hours", "type"],
+	"permission": {
+		"read": "doc.student_id in auth.student_ids || 'admin' in auth.role || 'coach' in auth.role",
+		"create": "'admin' in auth.role || 'coach' in auth.role",
+		"update": false,
+		"delete": "'admin' in auth.role"
+	},
+	"properties": {
+		"_id": {
+			"description": "记录ID"
+		},
+		"student_id": {
+			"bsonType": "string",
+			"description": "学生ID"
+		},
+		"course_id": {
+			"bsonType": "string",
+			"description": "课程ID"
+		},
+		"hours": {
+			"bsonType": "int",
+			"description": "消耗课时数"
+		},
+		"days": {
+			"bsonType": "int",
+			"description": "消耗天数课时",
+			"defaultValue": 0
+		},
+		"unit": {
+			"bsonType": "string",
+			"description": "课时单位",
+			"enum": ["lesson", "day"],
+			"defaultValue": "lesson"
+		},
+		"type": {
+			"bsonType": "string",
+			"description": "类型",
+			"enum": ["consume", "add", "gift", "expire"]
+		},
+		"reason": {
+			"bsonType": "string",
+			"description": "原因说明"
+		},
+		"before_hours": {
+			"bsonType": "int",
+			"description": "操作前课时数"
+		},
+		"after_hours": {
+			"bsonType": "int",
+			"description": "操作后课时数"
+		},
+		"before_days": {
+			"bsonType": "int",
+			"description": "操作前天数课时"
+		},
+		"after_days": {
+			"bsonType": "int",
+			"description": "操作后天数课时"
+		},
+		"package_deducts": {
+			"bsonType": "array",
+			"description": "扣减课时包明细",
+			"arrayType": "object",
+			"properties": {
+				"package_id": {
+					"bsonType": "string",
+					"description": "课时包ID"
+				},
+				"quantity": {
+					"bsonType": "int",
+					"description": "扣减数量"
+				}
+			},
+			"defaultValue": []
+		},
+		"operator_id": {
+			"bsonType": "string",
+			"description": "操作人ID"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

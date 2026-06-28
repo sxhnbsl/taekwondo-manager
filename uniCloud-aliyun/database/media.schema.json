@@ -1,0 +1,55 @@
+{
+	"bsonType": "object",
+	"required": ["course_id", "type", "url"],
+	"permission": {
+		"read": "doc.course_id in auth.course_ids || auth.role == 'admin' || auth.role == 'coach'",
+		"create": "auth.role == 'admin' || auth.role == 'coach'",
+		"update": false,
+		"delete": "auth.role == 'admin'"
+	},
+	"properties": {
+		"_id": {
+			"description": "媒体ID"
+		},
+		"course_id": {
+			"bsonType": "string",
+			"description": "课程ID"
+		},
+		"type": {
+			"bsonType": "string",
+			"description": "类型",
+			"enum": ["image", "video"]
+		},
+		"url": {
+			"bsonType": "string",
+			"description": "文件URL"
+		},
+		"thumb_url": {
+			"bsonType": "string",
+			"description": "缩略图URL（视频用）"
+		},
+		"size": {
+			"bsonType": "int",
+			"description": "文件大小（字节）"
+		},
+		"duration": {
+			"bsonType": "int",
+			"description": "视频时长（秒，仅视频）"
+		},
+		"description": {
+			"bsonType": "string",
+			"description": "描述"
+		},
+		"upload_by": {
+			"bsonType": "string",
+			"description": "上传人ID"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

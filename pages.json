@@ -1,0 +1,212 @@
+{
+	"pages": [
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		{
+			"path": "pages/parent/index/index",
+			"style": {
+				"navigationBarTitleText": "我的孩子"
+			}
+		},
+		{
+			"path": "pages/parent/student-detail/student-detail",
+			"style": {
+				"navigationBarTitleText": "学生详情"
+			}
+		},
+		{
+			"path": "pages/parent/class-history/class-history",
+			"style": {
+				"navigationBarTitleText": "上课记录"
+			}
+		},
+		{
+			"path": "pages/parent/class-detail/class-detail",
+			"style": {
+				"navigationBarTitleText": "课程详情"
+			}
+		},
+		{
+			"path": "pages/parent/notifications/notifications",
+			"style": {
+				"navigationBarTitleText": "消息通知"
+			}
+		},
+		{
+			"path": "pages/parent/notification-detail/notification-detail",
+			"style": {
+				"navigationBarTitleText": "消息详情"
+			}
+		},
+		{
+			"path": "pages/parent/bind-student/bind-student",
+			"style": {
+				"navigationBarTitleText": "添加孩子"
+			}
+		},
+		{
+			"path": "pages/coach/index/index",
+			"style": {
+				"navigationBarTitleText": "管理工作台"
+			}
+		},
+		{
+			"path": "pages/coach/student-list/student-list",
+			"style": {
+				"navigationBarTitleText": "学生管理"
+			}
+		},
+		{
+			"path": "pages/coach/student-edit/student-edit",
+			"style": {
+				"navigationBarTitleText": "编辑学生"
+			}
+		},
+		{
+			"path": "pages/coach/class-list/class-list",
+			"style": {
+				"navigationBarTitleText": "课程管理"
+			}
+		},
+		{
+			"path": "pages/coach/class-create/class-create",
+			"style": {
+				"navigationBarTitleText": "创建课程"
+			}
+		},
+		{
+			"path": "pages/coach/class-edit/class-edit",
+			"style": {
+				"navigationBarTitleText": "编辑课程"
+			}
+		},
+		{
+			"path": "pages/coach/class-detail/class-detail",
+			"style": {
+				"navigationBarTitleText": "课程详情"
+			}
+		},
+		{
+			"path": "pages/coach/media-upload/media-upload",
+			"style": {
+				"navigationBarTitleText": "上传照片"
+			}
+		},
+		{
+			"path": "pages/coach/hours-manage/hours-manage",
+			"style": {
+				"navigationBarTitleText": "课时管理"
+			}
+		},
+		{
+			"path": "pages/coach/hours-manage-detail/hours-manage-detail",
+			"style": {
+				"navigationBarTitleText": "学生课时详情"
+			}
+		},
+		{
+			"path": "pages/coach/statistics/statistics",
+			"style": {
+				"navigationBarTitleText": "数据统计"
+			}
+		},
+		{
+			"path": "pages/coach/coach-manage/coach-manage",
+			"style": {
+				"navigationBarTitleText": "教练管理"
+			}
+		},
+		{
+			"path": "pages/coach/coach-edit/coach-edit",
+			"style": {
+				"navigationBarTitleText": "编辑教练"
+			}
+		},
+		{
+			"path": "pages/coach/notification-send/notification-send",
+			"style": {
+				"navigationBarTitleText": "发送消息"
+			}
+		},
+		{
+			"path": "pages/coach/notification-list/notification-list",
+			"style": {
+				"navigationBarTitleText": "消息管理"
+			}
+		},
+		{
+			"path": "pages/coach/notification-detail/notification-detail",
+			"style": {
+				"navigationBarTitleText": "消息详情"
+			}
+		},
+		{
+			"path": "pages/coach/hours-warning/hours-warning",
+			"style": {
+				"navigationBarTitleText": "课时预警"
+			}
+		},
+		{
+			"path": "pages/coach/hours-package-manage/hours-package-manage",
+			"style": {
+				"navigationBarTitleText": "课时包管理"
+			}
+		},
+		{
+			"path": "pages/parent/user-agreement/user-agreement",
+			"style": {
+				"navigationBarTitleText": "用户协议"
+			}
+		},
+		{
+			"path": "pages/parent/privacy-policy/privacy-policy",
+			"style": {
+				"navigationBarTitleText": "隐私政策"
+			}
+		},
+		{
+			"path": "pages/parent/delete-account/delete-account",
+			"style": {
+				"navigationBarTitleText": "注销账号"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "欣兰体育课时管理",
+		"navigationBarBackgroundColor": "#ffffff",
+		"backgroundColor": "#fafafa"
+	},
+	"tabBar": {
+		"color": "#999999",
+		"selectedColor": "#262626",
+		"borderStyle": "white",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+				"pagePath": "pages/parent/index/index",
+				"text": "首页",
+				"iconPath": "static/images/icon-home.png",
+				"selectedIconPath": "static/images/icon-home.png"
+			},
+			{
+			"pagePath": "pages/parent/class-history/class-history",
+				"text": "记录",
+				"iconPath": "static/images/icon-record.png",
+				"selectedIconPath": "static/images/icon-record.png"
+		},
+			{
+				"pagePath": "pages/parent/notifications/notifications",
+				"text": "消息",
+				"iconPath": "static/images/icon-message.png",
+				"selectedIconPath": "static/images/icon-message.png"
+			}
+		]
+	},
+	"uniIdRouter": {},
+	"usingComponents": true
+}

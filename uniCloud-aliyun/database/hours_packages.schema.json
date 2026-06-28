@@ -1,0 +1,69 @@
+{
+	"bsonType": "object",
+	"required": ["student_id", "unit", "total", "remaining", "status"],
+	"permission": {
+		"read": "doc.student_id in auth.student_ids || 'admin' in auth.role || 'coach' in auth.role",
+		"create": "'admin' in auth.role || 'coach' in auth.role",
+		"update": "'admin' in auth.role || 'coach' in auth.role",
+		"delete": "'admin' in auth.role || 'coach' in auth.role"
+	},
+	"properties": {
+		"_id": {
+			"description": "课时包ID"
+		},
+		"student_id": {
+			"bsonType": "string",
+			"description": "学生ID"
+		},
+		"unit": {
+			"bsonType": "string",
+			"description": "课时单位",
+			"enum": ["lesson", "day"]
+		},
+		"total": {
+			"bsonType": "int",
+			"description": "总数量"
+		},
+		"remaining": {
+			"bsonType": "int",
+			"description": "剩余数量"
+		},
+		"is_unlimited": {
+			"bsonType": "bool",
+			"description": "是否不限时",
+			"defaultValue": false
+		},
+		"expire_at": {
+			"bsonType": "date",
+			"description": "到期时间"
+		},
+		"status": {
+			"bsonType": "string",
+			"description": "状态",
+			"enum": ["active", "expired", "consumed"],
+			"defaultValue": "active"
+		},
+		"warned_at": {
+			"bsonType": "timestamp",
+			"description": "最近提醒时间"
+		},
+		"operator_id": {
+			"bsonType": "string",
+			"description": "操作人ID"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"update_time": {
+			"bsonType": "timestamp",
+			"description": "更新时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

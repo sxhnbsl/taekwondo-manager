@@ -1,0 +1,14 @@
+{
+  "name": "expiry",
+  "version": "1.0.0",
+  "description": "课时到期处理",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "cloudfunction-config": {
+    "memorySize": 512,
+    "timeout": 60,
+    "runtime": "Nodejs16"
+  }
+}

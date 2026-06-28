@@ -1,0 +1,53 @@
+{
+	"bsonType": "object",
+	"required": ["student_id", "hours", "price"],
+	"permission": {
+		"read": "doc.student_id in auth.student_ids || auth.role == 'admin' || auth.role == 'coach'",
+		"create": "auth.role == 'admin'",
+		"update": false,
+		"delete": "auth.role == 'admin'"
+	},
+	"properties": {
+		"_id": {
+			"description": "记录ID"
+		},
+		"student_id": {
+			"bsonType": "string",
+			"description": "学生ID"
+		},
+		"hours": {
+			"bsonType": "int",
+			"description": "购买课时数"
+		},
+		"price": {
+			"bsonType": "int",
+			"description": "价格（分）"
+		},
+		"payment_method": {
+			"bsonType": "string",
+			"description": "支付方式",
+			"enum": ["wechat", "alipay", "cash"]
+		},
+		"status": {
+			"bsonType": "string",
+			"description": "状态",
+			"enum": ["pending", "paid", "cancelled"],
+			"defaultValue": "pending"
+		},
+		"transaction_id": {
+			"bsonType": "string",
+			"description": "交易ID"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"pay_time": {
+			"bsonType": "timestamp",
+			"description": "支付时间"
+		}
+	}
+}

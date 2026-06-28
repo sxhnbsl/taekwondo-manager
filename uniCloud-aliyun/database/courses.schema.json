@@ -1,0 +1,95 @@
+{
+	"bsonType": "object",
+	"required": ["title", "date", "start_time", "end_time"],
+	"permission": {
+		"read": "doc.student_ids in auth.student_ids || doc.coach_id == auth.uid || 'admin' in auth.role || 'coach' in auth.role",
+		"create": "'admin' in auth.role || 'coach' in auth.role",
+		"update": "'admin' in auth.role || 'coach' in auth.role",
+		"delete": "'admin' in auth.role"
+	},
+	"properties": {
+		"_id": {
+			"description": "课程ID"
+		},
+		"title": {
+			"bsonType": "string",
+			"description": "课程标题",
+			"trim": "both"
+		},
+		"date": {
+			"bsonType": "date",
+			"description": "上课日期"
+		},
+		"start_time": {
+			"bsonType": "string",
+			"description": "开始时间（HH:mm）"
+		},
+		"end_time": {
+			"bsonType": "string",
+			"description": "结束时间（HH:mm）"
+		},
+		"location": {
+			"bsonType": "string",
+			"description": "上课地点"
+		},
+		"content": {
+			"bsonType": "string",
+			"description": "课程内容描述"
+		},
+		"student_ids": {
+			"bsonType": "array",
+			"description": "参与学生ID列表",
+			"arrayType": "string"
+		},
+		"coach_id": {
+			"bsonType": "string",
+			"description": "教练ID"
+		},
+		"media_count": {
+			"bsonType": "int",
+			"description": "多媒体文件数量",
+			"defaultValue": 0
+		},
+		"media": {
+			"bsonType": "array",
+			"description": "多媒体文件列表",
+			"arrayType": "object",
+			"properties": {
+				"url": {
+					"bsonType": "string",
+					"description": "文件URL"
+				},
+				"type": {
+					"bsonType": "string",
+					"description": "文件类型：image/video",
+					"enum": ["image", "video"]
+				},
+				"description": {
+					"bsonType": "string",
+					"description": "文件描述"
+				}
+			},
+			"defaultValue": []
+		},
+		"status": {
+			"bsonType": "string",
+			"description": "状态",
+			"enum": ["planned", "completed", "cancelled"],
+			"defaultValue": "planned"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"update_time": {
+			"bsonType": "timestamp",
+			"description": "更新时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

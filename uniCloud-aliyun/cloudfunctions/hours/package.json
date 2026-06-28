@@ -1,0 +1,16 @@
+{
+	"name": "hours",
+	"version": "1.0.0",
+	"description": "课时管理云函数",
+	"main": "index.js",
+	"scripts": {},
+	"author": "",
+	"license": "ISC",
+	"cloudfunction-config": {
+		"memorySize": 512,
+		"timeout": 60,
+		"path": "/api/hours",
+		"runtime": "Nodejs16"
+	},
+	"dependencies": {}
+}

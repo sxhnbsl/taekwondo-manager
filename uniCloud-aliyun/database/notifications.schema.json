@@ -1,0 +1,52 @@
+{
+	"bsonType": "object",
+	"required": ["user_id", "title", "content", "type"],
+	"permission": {
+		"read": "doc.user_id == auth.uid || 'admin' in auth.role",
+		"create": "'admin' in auth.role || 'coach' in auth.role",
+		"update": "doc.user_id == auth.uid || 'admin' in auth.role",
+		"delete": "'admin' in auth.role"
+	},
+	"properties": {
+		"_id": {
+			"description": "通知ID"
+		},
+		"user_id": {
+			"bsonType": "string",
+			"description": "用户ID"
+		},
+		"title": {
+			"bsonType": "string",
+			"description": "通知标题"
+		},
+		"content": {
+			"bsonType": "string",
+			"description": "通知内容"
+		},
+		"type": {
+			"bsonType": "string",
+			"description": "类型",
+			"enum": ["class_reminder", "hours_warning", "media_update", "hours_expiry_warning", "hours_expired"]
+		},
+		"is_read": {
+			"bsonType": "bool",
+			"description": "是否已读",
+			"defaultValue": false
+		},
+		"related_id": {
+			"bsonType": "string",
+			"description": "关联ID（课程ID或学生ID）"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"read_time": {
+			"bsonType": "timestamp",
+			"description": "阅读时间"
+		}
+	}
+}

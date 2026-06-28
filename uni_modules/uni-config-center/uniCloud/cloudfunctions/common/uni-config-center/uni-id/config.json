@@ -1,0 +1,34 @@
+{
+  "passwordSecret": "your-password-secret-key",
+  "tokenSecret": "your-token-secret-key",
+  "tokenExpiresIn": 7200,
+  "passwordErrorLimit": 6,
+  "passwordErrorRetryTime": 3600,
+  "bindTokenToDevice": false,
+  "passwordMinLength": 6,
+  "autoSetInviteCode": false,
+  "forceInviteCode": false,
+  "geetest": {
+    "captchaId": "",
+    "privateKey": ""
+  },
+  "qcloudAppId": "",
+  "qcloudSecretId": "",
+  "qcloudSecretKey": "",
+  "qiniuAccessKey": "",
+  "qiniuSecretKey": "",
+  "qiniuBucket": "",
+  "aliyunAccessKeyId": "",
+  "aliyunAccessKeySecret": "",
+  "aliyunBucket": "",
+  "aliyunOssEndpoint": "",
+  "weixin": {
+    "appid": "",
+    "appsecret": ""
+  },
+  "univerify": {
+    "appid": "",
+    "apiKey": "",
+    "apiSecret": ""
+  }
+}
